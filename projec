@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Future Shaper</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js">
+
+</script>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+     
+						
+        
+    </style>
+</head>
+<body> 
+    <break>
+    <header class="header">
+        
+        <nav class="navbar">
+           <a>
+               <img id="Logo" src="logo.png" width="50px" height="50px" >
+                <div class="nav-line-1-container"><span id="nav-link-accountList-nav-line-1" class="nav-line-1 nav-progressive-content"></span></div>
+                <span class="nav-line-2 "><span class="nav-icon nav-arrow"></span>
+                </span>
+              </a>
+        <a href="#home" class="active">Home</a>
+        <a href="#report">Report</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#help">Help</a>
+       
+            
+        </div></ul></nav>
+    </header></break>  
+<main>
+</script>
+</head>
+<body>
+<form name="myform" id="myForm">
+
+<div class = "selecter"></div>
+<select id="contrySelector" onchange="updateStateSelector()">
+<option value=""disable  selected> Select Country</option>
+</select>
+
+     <select id="StateSelector" >
+    <option value=""disable selected> Select State</option>
+    </select>
+    
+
+
+
+ <select name="districtname" id="districtSel" size="1">
+<option value="" selected="selected">Please select State first</option>
+</select>
+<input type="submit">
+</form>
+</main>
+  
+
+
+    <img src="1.webp" alt="image" width="1500">
+    <img src="bar.png" alt="image" width="1500" >
+    <img src="3.jpg" alt="image" width="1500">
+    <img src="4.jpg" alt="image" width="1500">
+   // <img src="5.jpg" alt="image" width="1500">
+
+    
+  
+
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+</div>
+</selection>
+
+
+  
+</body>
+</html>
+const countrySelector = document.getElementById("countrySelector");
+const stateSelector = document.getElementById("stateSelector");
+
+const countriesData = [
+    {
+        country: "India",
+        states: ["Bihar", "Jharkhand", "New Delhi", "Maharashtra"] // States in Asia
+    },
+    {
+        country: "Europe",
+        states: ["State A", "State B", "State C"] // States in Europe
+    },
+    // Add more countries and their states as needed
+];
+
+function populateCountrySelector() {
+    countriesData.forEach(countryData => {
+        const option = document.createElement("option");
+        option.value = countryData.country;
+        option.textContent = countryData.country;
+        countrySelector.appendChild(option);
+    });
+}
+
+function populateStateSelector(selectedCountry) {
+    stateSelector.innerHTML = "<option value='' disabled selected>Select a State</option>";
+
+    const selectedCountryData = countriesData.find(countryData => countryData.country === selectedCountry);
+    if (selectedCountryData) {
+        selectedCountryData.states.forEach(state => {
+            const option = document.createElement("option");
+            option.value = state;
+            option.textContent = state;
+            stateSelector.appendChild(option);
+        });
+    }
+}
+
+function updateStateSelector() {
+    const selectedCountry = countrySelector.value;
+    populateStateSelector(selectedCountry);
+}
+
+countrySelector.addEventListener("change", updateStateSelector);
+
+populateCountrySelector(); // Initial call to populate the country selector
+
+body{
+    display:contents;
+    justify-content: center;
+    align-items: center;
+    
+}
+.image {
+    position: left;
+}
+
+
+.header{
+ text-align: center;
+ font-size: 50px;
+   
+}
+h2{
+    text-align: center;
+    font-size: 50px;
+    color: whitesmoke;
+}
+   
+.navbar {
+    overflow: hidden;
+    background-color: #679664;
+}
+
+ .navbar a {
+            float:left;
+            font-size: 20px;
+            color: white;
+            position: relative;
+            left: 50px;
+            padding: 14px 10px;
+            text-decoration: none;
+        }
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: rgb(215, 60, 60);
+}
+
+
+
+form{
+    padding:20px;
+    position:absolute;
+  }
+.slider{
+    background-size: auto;
+    overflow: hidden;
+    position: relative;
+
+}
+.slide {
+    display: inline-block;
+    animation: slide 5s infinite;
+}
